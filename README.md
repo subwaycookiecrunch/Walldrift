@@ -4,6 +4,14 @@ Hey! Welcome to WallDrift. This is a native macOS app I built to keep my desktop
 
 It lives right in your menu bar so it stays out of your way, but you can pop open the main window whenever you want to browse, download, or "favorite" specific images.
 
+## 🚀 Download & Install
+You don't need to build this from source! Just download the ready-to-use macOS app:
+1. Go to the [Releases](https://github.com/subwaycookiecrunch/Walldrift/releases/latest) page.
+2. Download `WallDrift.dmg`.
+3. Open it and drag WallDrift into your Applications folder.
+
+*(Note: Since I haven't signed this with an Apple Developer account, macOS might block it the first time. To open it, right-click the app in your Applications folder and click "Open").*
+
 ## What it does
 
 * **Auto-rotating wallpapers:** Set an interval and let the app cycle through top Reddit posts on all your monitors.
