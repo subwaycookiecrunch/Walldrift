@@ -1,5 +1,7 @@
 import SwiftUI
 
+// AsyncImage on older macOS (like macOS 13) is buggy or doesn't support local disk caching 
+// properly, so we built this quick wrapper over ImageCacheService
 struct CachedAsyncImage: View {
     let url: URL?
     var contentMode: ContentMode = .fill

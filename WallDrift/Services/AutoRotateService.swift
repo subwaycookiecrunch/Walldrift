@@ -48,6 +48,7 @@ class AutoRotateService: ObservableObject {
     }
     
     func rotateNow() async {
+        // if they want to rotate from the timeline, try using the cached feed first
         if rotateFromFeed {
             let feed = BackgroundFeedService.shared.timelineFeed
             if let newest = feed.first {
@@ -59,6 +60,7 @@ class AutoRotateService: ObservableObject {
                 }
                 return
             } else {
+                // if feed is empty, fallback to subreddits
                 print("Auto-rotation (feed mode) warning: timeline feed is empty, falling back to subreddit search")
             }
         }

@@ -24,7 +24,7 @@ struct MenuBarView: View {
             
             ScrollView {
                 VStack(spacing: 16) {
-                    // Background polling status & countdown
+                    // showing background polling status and timer
                     VStack(alignment: .leading, spacing: 6) {
                         HStack {
                             Image(systemName: "livephoto")
@@ -86,6 +86,8 @@ struct MenuBarView: View {
                         .buttonStyle(.plain)
                         
                         Button(action: {
+                            // asyncAfter 0.1s is a hack but without it macOS closes the window immediately
+                            // when the menuBarExtra popover loses focus.
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                 openWindow(id: "browser")
                                 NSApp.activate(ignoringOtherApps: true)

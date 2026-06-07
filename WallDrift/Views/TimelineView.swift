@@ -55,7 +55,6 @@ struct TimelineView: View {
             Divider()
             
             if feedService.timelineFeed.isEmpty {
-                // Empty state
                 VStack(spacing: 20) {
                     Image(systemName: "livephoto.badge.a")
                         .font(.system(size: 64))
@@ -71,7 +70,7 @@ struct TimelineView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                // List of wallpapers
+                // items feed container
                 ScrollView {
                     LazyVStack(spacing: 12) {
                         let itemsToShow = Array(feedService.timelineFeed.prefix(visibleLimit))
@@ -94,7 +93,7 @@ struct TimelineView: View {
                             ProgressView()
                                 .padding()
                                 .onAppear {
-                                    // Local pagination increment
+                                    // infinite scroll load next batch
                                     visibleLimit += 30
                                 }
                         }
@@ -104,7 +103,7 @@ struct TimelineView: View {
             }
         }
         .onAppear {
-            // Reset the global badge count when viewing the timeline
+            // clean badge count since we saw the new ones
             BackgroundFeedService.shared.newItemCount = 0
             initialNewCount = feedService.newItemCount
         }

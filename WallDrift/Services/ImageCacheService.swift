@@ -37,12 +37,10 @@ actor ImageCacheService {
     func image(for url: URL) async throws -> NSImage? {
         let key = cacheKey(for: url)
         
-        // Check memory cache
         if let image = memoryCache.object(forKey: key as NSString) {
             return image
         }
         
-        // Check disk cache
         let fileURL = cacheDirectory.appendingPathComponent(key)
         if fileManager.fileExists(atPath: fileURL.path) {
             if let image = NSImage(contentsOf: fileURL) {
@@ -51,17 +49,15 @@ actor ImageCacheService {
             }
         }
         
-        // Download image
         let (data, _) = try await URLSession.shared.data(from: url)
         guard let image = NSImage(data: data) else {
             return nil
         }
         
-        // Save to cache
         memoryCache.setObject(image, forKey: key as NSString)
         try? data.write(to: fileURL)
         
-        // Enforce disk cache limit asynchronously
+        // clean up old cache files in the background if we went over the limit
         Task.detached {
             await self.enforceCacheLimit()
         }
@@ -86,7 +82,7 @@ actor ImageCacheService {
         
         if totalSize <= maxDiskCacheSize { return }
         
-        // Sort by oldest modified
+        // remove the oldest files first
         fileAttributes.sort { $0.date < $1.date }
         
         for file in fileAttributes {

@@ -15,7 +15,7 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            // Auto-Rotate Section
+            // auto-rotation options
             VStack(alignment: .leading, spacing: 8) {
                 Text("Auto-Rotate Interval")
                     .font(.subheadline)
@@ -25,7 +25,7 @@ struct SettingsView: View {
                 Picker("Interval", selection: $autoRotateService.interval) {
                     Text("15 Minutes").tag(TimeInterval(900))
                     Text("30 Minutes").tag(TimeInterval(1800))
-                    Text("1 Hour").tag(TimeInterval(3600))
+                    Text("Hour").tag(TimeInterval(3600))
                     Text("3 Hours").tag(TimeInterval(10800))
                     Text("Daily").tag(TimeInterval(86400))
                 }
@@ -37,7 +37,7 @@ struct SettingsView: View {
             
             Divider()
             
-            // Live Feed Section
+            // background downloader config
             VStack(alignment: .leading, spacing: 8) {
                 Text("Live Feed (Background Polling)")
                     .font(.subheadline)
@@ -51,7 +51,7 @@ struct SettingsView: View {
                         Text("5 Minutes").tag(TimeInterval(300))
                         Text("15 Minutes").tag(TimeInterval(900))
                         Text("30 Minutes").tag(TimeInterval(1800))
-                        Text("1 Hour").tag(TimeInterval(3600))
+                        Text("Hour").tag(TimeInterval(3600))
                     }
                     .labelsHidden()
                 }
@@ -75,7 +75,7 @@ struct SettingsView: View {
             
             Divider()
             
-            // Storage Section
+            // local disk storage / cache
             VStack(alignment: .leading, spacing: 8) {
                 Text("Storage")
                     .font(.subheadline)

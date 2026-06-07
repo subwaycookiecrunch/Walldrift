@@ -39,6 +39,8 @@ struct SubredditAboutData: Decodable {
         case communityIcon = "community_icon"
     }
     
+    // cleans up the thumbnail URLs reddit gives us.
+    // sometimes they escape the ampersands which breaks URLSession.
     var cleanIconURL: String? {
         var icon: String? = nil
         if let commIcon = communityIcon, !commIcon.isEmpty {
@@ -101,7 +103,7 @@ class RedditService {
             for child in redditResponse.data.children {
                 let post = child.data
                 
-                // Basic filtering
+                // only grab direct image links
                 let lowerURL = post.url.lowercased()
                 guard lowerURL.hasSuffix(".jpg") || lowerURL.hasSuffix(".jpeg") || lowerURL.hasSuffix(".png") else {
                     continue
@@ -114,7 +116,7 @@ class RedditService {
                 let imageSource = preview.images[0].source
                 guard let fullResURL = imageSource.decodedURL else { continue }
                 
-                // Find a suitable thumbnail (e.g. around 600px width)
+                // find a preview thumbnail close to 600px wide so we don't load huge files in the grid
                 let resolutions = preview.images[0].resolutions
                 let suitableThumb = resolutions.first(where: { $0.width >= 600 }) ?? resolutions.last
                 let thumbURL = suitableThumb?.decodedURL ?? fullResURL
@@ -204,7 +206,7 @@ class RedditService {
             guard let entryRange = Range(match.range(at: 1), in: xmlString) else { continue }
             let entryContent = String(xmlString[entryRange])
             
-            // Parse ID
+            // let's parse the ID. regex is gross but works
             let idRegex = try NSRegularExpression(pattern: "<id>([^<]+)</id>")
             guard let idMatch = idRegex.firstMatch(in: entryContent, range: NSRange(entryContent.startIndex..., in: entryContent)),
                   let idRange = Range(idMatch.range(at: 1), in: entryContent) else {
@@ -220,7 +222,6 @@ class RedditService {
             }
             lastId = fullId
             
-            // Parse Title
             let titleRegex = try NSRegularExpression(pattern: "<title>([^<]+)</title>")
             guard let titleMatch = titleRegex.firstMatch(in: entryContent, range: NSRange(entryContent.startIndex..., in: entryContent)),
                   let titleRange = Range(titleMatch.range(at: 1), in: entryContent) else {
@@ -228,7 +229,6 @@ class RedditService {
             }
             let title = String(entryContent[titleRange])
             
-            // Parse Author
             let authorRegex = try NSRegularExpression(pattern: "<author>\\s*<name>([^<]+)</name>")
             var author = "unknown"
             if let authorMatch = authorRegex.firstMatch(in: entryContent, range: NSRange(entryContent.startIndex..., in: entryContent)),
@@ -241,7 +241,6 @@ class RedditService {
                 }
             }
             
-            // Parse Thumbnail
             let thumbRegex = try NSRegularExpression(pattern: "<media:thumbnail\\s+url=\"([^\"]+)\"")
             var thumbURL: URL? = nil
             if let thumbMatch = thumbRegex.firstMatch(in: entryContent, range: NSRange(entryContent.startIndex..., in: entryContent)),
@@ -250,7 +249,7 @@ class RedditService {
                 thumbURL = URL(string: thumbStr)
             }
             
-            // Parse Full Res Image URL
+            // decode html entities from rss payload
             let decodedContent = entryContent
                 .replacingOccurrences(of: "&amp;", with: "&")
                 .replacingOccurrences(of: "&lt;", with: "<")
@@ -291,13 +290,12 @@ class RedditService {
         print("RSS Fallback: successfully parsed \(wallpapers.count) wallpapers for r/\(subreddit)")
         return (wallpapers, lastId)
     }
-    
     func validateSubreddit(name: String) async throws -> SubredditAboutData {
         let cleanName = name.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "r/", with: "")
             .replacingOccurrences(of: "/", with: "")
         
-        // 1. Try JSON API
+        // try the normal about json first
         do {
             let url = URL(string: "https://www.reddit.com/r/\(cleanName)/about.json")!
             var request = URLRequest(url: url)
@@ -315,10 +313,10 @@ class RedditService {
             if error is CancellationError {
                 throw error
             }
-            print("validateSubreddit: JSON API failed: \(error.localizedDescription)")
+            // print("validateSubreddit: JSON API failed: \(error.localizedDescription)")
         }
         
-        // 2. Fallback to RSS validation for Cloud VMs/VPNs
+        // backup rss check for rate limits/proxies/cloud environments
         let rssURL = URL(string: "https://www.reddit.com/r/\(cleanName).rss")!
         var request = URLRequest(url: rssURL)
         request.setValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36", forHTTPHeaderField: "User-Agent")

@@ -12,8 +12,9 @@ class BrowserWindowManager {
             return
         }
         
-        let view = MainBrowserView().frame(minWidth: 800, minHeight: 600)
-        let hostingController = NSHostingController(rootView: view)
+        // keeps track of the main browser window so we don't open duplicate ones
+        let browserView = MainBrowserView().frame(minWidth: 800, minHeight: 600)
+        let hostingController = NSHostingController(rootView: browserView)
         let newWindow = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
             styleMask: [.titled, .closable, .miniaturizable, .resizable],

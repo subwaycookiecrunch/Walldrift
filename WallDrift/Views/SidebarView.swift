@@ -41,7 +41,7 @@ struct SidebarView: View {
                 
                 ForEach(viewModel.customSources) { source in
                     HStack(spacing: 8) {
-                        // Active toggle
+                        // toggle whether to include in My Feed
                         Button(action: {
                             viewModel.toggleSourceActive(id: source.id)
                         }) {
@@ -50,7 +50,6 @@ struct SidebarView: View {
                         }
                         .buttonStyle(.plain)
                         
-                        // Source link button
                         Button(action: {
                             viewModel.selectedSourceId = source.id
                         }) {
@@ -69,7 +68,7 @@ struct SidebarView: View {
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text("r/\(source.name)")
                                         .lineLimit(1)
-                                    Text("\(formatSubscribers(source.subscriberCount)) subscribers")
+                                    Text("\(formatSubscribers(source.subscriberCount)) subs")
                                         .font(.caption2)
                                         .foregroundColor(.secondary)
                                 }

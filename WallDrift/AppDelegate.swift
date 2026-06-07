@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         willUpdateObserver = NotificationCenter.default.addObserver(forName: NSApplication.willUpdateNotification, object: nil, queue: .main) { _ in
             if isInitialLaunch {
                 isInitialLaunch = false
+                // HACK: SwiftUI on macOS insists on opening a blank main window on start. Close it immediately.
                 if let window = NSApp.windows.first(where: { $0.title == "WallDrift Browser" || $0.title == "WallDrift" }) {
                     window.close()
                 }

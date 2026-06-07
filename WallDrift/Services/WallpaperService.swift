@@ -25,7 +25,8 @@ class WallpaperService {
         
         if !fileManager.fileExists(atPath: fileURL.path) {
             let (data, _) = try await URLSession.shared.data(from: wallpaper.fullResURL)
-            // Decode and re-encode to sanitize image and prevent macOS WallpaperAgent crashes
+            // macOS Sonoma's WallpaperAgent is very fragile and crashes if a downloaded image
+            // has weird color profiles or malformed headers. Decoding and saving a fresh JPEG strips that garbage.
             guard let image = NSImage(data: data),
                   let tiffData = image.tiffRepresentation,
                   let bitmapInfo = NSBitmapImageRep(data: tiffData),

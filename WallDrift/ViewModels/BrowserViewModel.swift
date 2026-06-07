@@ -117,7 +117,7 @@ class BrowserViewModel: ObservableObject {
         
         do {
             if viewCustomFeed {
-                // Fetch merged feed from all active custom sources
+                // pull everything merged together
                 let activeSources = customSources.filter { $0.isActive }
                 if activeSources.isEmpty {
                     wallpapers = []
@@ -127,7 +127,7 @@ class BrowserViewModel: ObservableObject {
                 }
                 canLoadMore = false
             } else if let sourceId = selectedSourceId, let source = customSources.first(where: { $0.id == sourceId }) {
-                // Fetch from a single custom source
+                // pull just one custom sub
                 let result = try await RedditService.shared.fetchWallpapers(
                     subreddit: source.name,
                     sort: source.sortMode,
@@ -138,12 +138,12 @@ class BrowserViewModel: ObservableObject {
                 afterToken = result.after
                 canLoadMore = result.after != nil
                 
-                // Update last fetched
+                // save when we last fetched
                 if let idx = customSources.firstIndex(where: { $0.id == sourceId }) {
                     customSources[idx].lastFetched = Date()
                 }
             } else {
-                // Fetch from a default/text-input subreddit
+                // normal subreddit search from the text input
                 let result = try await RedditService.shared.fetchWallpapers(
                     subreddit: currentSubreddit,
                     sort: currentSort,

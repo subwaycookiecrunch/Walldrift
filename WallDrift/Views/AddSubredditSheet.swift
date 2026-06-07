@@ -42,7 +42,6 @@ struct AddSubredditSheet: View {
             
             Divider()
             
-            // Content Area
             Group {
                 if isLoading {
                     VStack(spacing: 12) {

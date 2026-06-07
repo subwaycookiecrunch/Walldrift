@@ -100,13 +100,13 @@ class BackgroundFeedService: ObservableObject {
     }
     
     func performPoll() async {
-        // Respect system battery state
+        // don't run this if battery is low, nobody wants their laptop dying because of a wallpaper app
         if shouldSkipPollingDueToBattery() {
             print("Background Feed Service: Poll skipped - battery is low (< 20%)")
             return
         }
         
-        // Respect network connectivity
+        // only query if we're actually connected
         if !NetworkMonitor.shared.isConnected {
             print("Background Feed Service: Poll skipped - no internet network")
             return
@@ -152,10 +152,9 @@ class BackgroundFeedService: ObservableObject {
                     saveSeenIds(self.seenPostIds)
                 }
                 
-                // Post local notification
                 postNotification(count: newWithTimestamps.count)
                 
-                // Auto-set wallpaper if instant swap is enabled
+                // set it immediately if the user wants auto-rotate on new arrivals
                 if autoSetOnNew, let newest = newWithTimestamps.first {
                     do {
                         try await WallpaperService.shared.setWallpaper(newest)
@@ -273,7 +272,7 @@ class BackgroundFeedService: ObservableObject {
     }
 }
 
-// Simple Network Monitor to respect system state
+// Simple NWPathMonitor wrapper to check network state
 class NetworkMonitor {
     static let shared = NetworkMonitor()
     private let monitor = NWPathMonitor()
