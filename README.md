@@ -1,42 +1,43 @@
-# WallDrift 🌊
+# WallDrift
 
-Hey! Welcome to WallDrift. This is a native macOS app I built to keep my desktop fresh. It grabs high-res wallpapers straight from your favorite subreddits (like `r/wallpapers` or `r/EarthPorn`) and auto-rotates them in the background.
+WallDrift is a simple, native macOS utility that keeps your desktop background fresh by cycling through high-quality wallpapers from Reddit. It fetches images from subreddits like r/wallpapers, r/EarthPorn, or any custom subreddit you add.
 
-It lives right in your menu bar so it stays out of your way, but you can pop open the main window whenever you want to browse, download, or "favorite" specific images.
+The app runs in your menu bar to stay out of the way, but you can open the main window to browse, download, or favorite specific images.
 
-## 🚀 Download & Install
-You don't need to build this from source! Just download the ready-to-use macOS app:
-1. Go to the [Releases](https://github.com/subwaycookiecrunch/Walldrift/releases/latest) page.
-2. Download `WallDrift.dmg`.
-3. Open it and drag WallDrift into your Applications folder.
+## Download & Install
 
-*(Note: Since I haven't signed this with an Apple Developer account, macOS might block it the first time. To open it, right-click the app in your Applications folder and click "Open").*
+You don't need to compile anything from source. Just download the app directly:
 
-## What it does
+1. Head over to the [Releases](https://github.com/subwaycookiecrunch/Walldrift/releases/latest) page.
+2. Download the `WallDrift.dmg` file.
+3. Open the disk image and drag the app into your Applications folder.
 
-* **Auto-rotating wallpapers:** Set an interval and let the app cycle through top Reddit posts on all your monitors.
-* **Menu bar quick access:** Skip a wallpaper, clear the cache, or jump to settings right from the menu bar.
-* **Add your own subreddits:** You aren't stuck with the defaults. Toss in any image-heavy subreddit you like.
-* **Native & fast:** Built 100% in Swift and SwiftUI. It's super lightweight.
-* **Caching:** It caches images so it doesn't nuke your bandwidth or Reddit's API every time you open it. It also cleans up after itself (keeps the cache under 500MB).
+*(Note: Since this app isn't signed with an Apple Developer account, macOS might block it the first time you open it. To bypass this, right-click the app in your Applications folder and select "Open" from the menu).*
 
-## How to build it
+## Features
 
-I used [XcodeGen](https://github.com/yonaskolb/XcodeGen) to keep the repo clean without checking in a messy `.xcodeproj` file. 
+- **Auto-rotate wallpapers:** Set a time interval to cycle through Reddit posts on all your connected screens.
+- **Menu bar control:** Skip wallpapers, clear the cache, or open settings directly from the status bar icon.
+- **Custom subreddits:** Add any image-heavy subreddits you like.
+- **Native performance:** Built in Swift and SwiftUI, so it runs light on memory and CPU.
+- **Smart caching:** Automatically caches images locally to save bandwidth, keeping the cache size under 500MB.
 
-To run this on your own machine:
+## Building from source
 
-1. Grab XcodeGen (if you don't have it):
+If you want to build the project yourself, I used [XcodeGen](https://github.com/yonaskolb/XcodeGen) so you don't have to deal with messy `.xcodeproj` merge conflicts.
+
+1. Install XcodeGen if you don't have it:
    ```bash
    brew install xcodegen
    ```
-2. Generate the project:
+2. Generate the Xcode project:
    ```bash
    xcodegen generate
    ```
-3. Open the newly created `WallDrift.xcodeproj` in Xcode and hit Build (or `Cmd + R`)!
+3. Open `WallDrift.xcodeproj` and run it in Xcode.
 
-## Tech details
-It's built for macOS 13.0+ using Swift 5.9, SwiftUI, and standard AppKit under the hood. Everything is sandboxed properly, and your wallpapers save locally to `~/Library/Application Support/WallDrift`.
+## Under the hood
 
-Feel free to poke around the code, submit issues, or fork it!
+It runs on macOS 13.0+ using Swift 5.9, SwiftUI, and AppKit. Wallpapers are saved locally in your user library at `~/Library/Application Support/WallDrift`.
+
+Feel free to fork the repository or submit issues if you run into anything!
