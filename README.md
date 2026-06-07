@@ -4,6 +4,11 @@ WallDrift is a simple, native macOS utility that keeps your desktop background f
 
 The app runs in your menu bar to stay out of the way, but you can open the main window to browse, download, or favorite specific images.
 
+<p align="center">
+  <img src="screenshots/browser_window.png" width="60%" alt="WallDrift Browser Window" />
+  <img src="screenshots/menu_bar.png" width="35%" alt="WallDrift Menu Bar Control" />
+</p>
+
 ## Download & Install
 
 You don't need to compile anything from source. Just download the app directly:
