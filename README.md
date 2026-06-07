@@ -1,47 +1,34 @@
-# WallDrift
+# WallDrift 🌊
 
-WallDrift is a production-ready macOS wallpaper engine app built completely natively using Swift and SwiftUI. It fetches beautiful, high-resolution wallpapers from Reddit's public API (such as `r/wallpapers`, `r/EarthPorn`, etc.), and allows you to seamlessly browse, download, set, and auto-rotate them as your desktop background.
+Hey! Welcome to WallDrift. This is a native macOS app I built to keep my desktop fresh. It grabs high-res wallpapers straight from your favorite subreddits (like `r/wallpapers` or `r/EarthPorn`) and auto-rotates them in the background.
 
-## Features Overview
+It lives right in your menu bar so it stays out of your way, but you can pop open the main window whenever you want to browse, download, or "favorite" specific images.
 
-- **Native SwiftUI:** Built natively for macOS 13.0+ using cutting edge SwiftUI layout features like `NavigationSplitView` and `LazyVGrid`.
-- **Menu Bar Access:** Runs as a menu bar app for quick access to auto-rotate toggles and "Next Wallpaper" functionality, while allowing you to open the full browser window on demand.
-- **Reddit Integration:** Directly fetches images via Reddit's JSON API from top, hot, and new sorts across different subreddits. Custom subreddits can be added on the fly.
-- **Auto-Rotation Engine:** A built-in background timer periodically updates your desktop wallpaper from your selected subreddit sources automatically.
-- **Robust Caching:** Utilizes a two-tier in-memory and disk cache mechanism to preserve bandwidth and quickly load thumbnails. Limits disk cache size to 500MB and automatically evicts oldest cached images.
-- **Favorite & Download:** Seamlessly "Favorite" your top wallpapers to keep them stored in your local library, or download them natively as desktop backgrounds across multiple connected displays.
+## What it does
 
-## Build Instructions
+* **Auto-rotating wallpapers:** Set an interval and let the app cycle through top Reddit posts on all your monitors.
+* **Menu bar quick access:** Skip a wallpaper, clear the cache, or jump to settings right from the menu bar.
+* **Add your own subreddits:** You aren't stuck with the defaults. Toss in any image-heavy subreddit you like.
+* **Native & fast:** Built 100% in Swift and SwiftUI. It's super lightweight.
+* **Caching:** It caches images so it doesn't nuke your bandwidth or Reddit's API every time you open it. It also cleans up after itself (keeps the cache under 500MB).
 
-Because generating an `.xcodeproj` file with its complex UUID structure is notoriously tricky to do automatically, this project leverages [XcodeGen](https://github.com/yonaskolb/XcodeGen) to construct a fresh and clean Xcode project file.
+## How to build it
 
-1. **Install XcodeGen** (if you haven't already):
+I used [XcodeGen](https://github.com/yonaskolb/XcodeGen) to keep the repo clean without checking in a messy `.xcodeproj` file. 
+
+To run this on your own machine:
+
+1. Grab XcodeGen (if you don't have it):
    ```bash
    brew install xcodegen
    ```
-
-2. **Generate the Xcode Project:**
-   In your terminal, navigate to the `WallDrift` project directory and run:
+2. Generate the project:
    ```bash
    xcodegen generate
    ```
+3. Open the newly created `WallDrift.xcodeproj` in Xcode and hit Build (or `Cmd + R`)!
 
-3. **Open and Build:**
-   This command will produce `WallDrift.xcodeproj`. Open it using Xcode:
-   ```bash
-   open WallDrift.xcodeproj
-   ```
-   Alternatively, you can build from the command line using:
-   ```bash
-   xcodebuild -project WallDrift.xcodeproj -scheme WallDrift build
-   ```
+## Tech details
+It's built for macOS 13.0+ using Swift 5.9, SwiftUI, and standard AppKit under the hood. Everything is sandboxed properly, and your wallpapers save locally to `~/Library/Application Support/WallDrift`.
 
-## Keyboard Shortcuts & Navigation
-
-- **Command (⌘) + W:** Close the main browser window.
-- **Click:** Select a wallpaper thumbnail to view it in full resolution.
-- **Menu Bar Icon:** Click the `photo.on.rectangle` icon in your macOS status bar to reveal the compact quick-settings popover.
-
-## Developer Info
-- **Tech Stack:** Swift 5.9, SwiftUI, Combine, URLSession, AppKit.
-- **Permissions:** App Sandbox enabled, outbound network access allowed, and read/write file access enabled for saving to `~/Library/Application Support/WallDrift`.
+Feel free to poke around the code, submit issues, or fork it!
