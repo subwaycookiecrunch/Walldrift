@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09C93C5AB9A1AFE8BD1F9E68 /* RedditPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D5F3628EDEE553930002AC /* RedditPost.swift */; };
+		0ACF338819C6FB374DEE19BC /* AutoRotateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088B575CF35323AB814A1D8 /* AutoRotateService.swift */; };
+		0EED15BCCA48BC40E3490ACE /* WallDriftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741C079E54DAE9F431CA0801 /* WallDriftApp.swift */; };
+		2676135FA037109A6C682668 /* BrowserWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB1B410CA3408AFA407D3A /* BrowserWindowManager.swift */; };
+		2DBEBCB330C94B0C28960F65 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC606843E221639803A4FF9 /* MenuBarView.swift */; };
+		3155476F1498C77F813C2F79 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635A6CC21832A3AA862CA5B /* ImageCacheService.swift */; };
+		3634F723F7AA9E862971E15F /* BackgroundFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAFF961C6110B2CB71F7909 /* BackgroundFeedService.swift */; };
+		4962D8EBA8F11654F1930AD2 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CB463EF21515D7D5A6764 /* SidebarView.swift */; };
+		518A0A61CAD87B43E1BADD41 /* RedditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D92F6349A38BADE54772759 /* RedditService.swift */; };
+		54FAD7022E99DD5BDD5DF576 /* WallpaperDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE275F208580C308CDD56883 /* WallpaperDetailView.swift */; };
+		5E0231AD55193059429EA76C /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C689BE7E7C0AF3DBCCBCAE9 /* TimelineView.swift */; };
+		5E9D4040BD1691F54C6A8E84 /* MainBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B8D8786FD72C474962201 /* MainBrowserView.swift */; };
+		813CAF95FD480ED2B8C3CD4F /* MenuBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1643D9A37A3E9C07FCC73 /* MenuBarViewModel.swift */; };
+		8C1254AE666AD0C55056926E /* AddSubredditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B435A8274FA47F7EABEDA417 /* AddSubredditSheet.swift */; };
+		92C2C46D6E239AB84B28D787 /* WallpaperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F644A4113B9C5C9EAFDB25E /* WallpaperService.swift */; };
+		A5641AD9BC6610F58A37FA13 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A4F1E8A823C7F69F925C9 /* Wallpaper.swift */; };
+		A6F4F47618F73F0945989472 /* SubredditSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE63CF410881D455379647C /* SubredditSource.swift */; };
+		C4F018487594A8A66C26B92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AF56300E02822F197BA51 /* Assets.xcassets */; };
+		D3AE32FC9DE244497F9DBAB4 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74DEF993BF096D8CCA5129D /* BrowserViewModel.swift */; };
+		D3EC37647C47A9AAB9AA8C4F /* WallpaperGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1036A2552E85F1FF7F8A652 /* WallpaperGridView.swift */; };
+		D3FF3A8AE2C8BB744F960AE1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C14ED26EB9BA4FCEA7E5D6 /* SettingsView.swift */; };
+		DF4633916E3549FBD6DF567B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00F83CB6C2464615762262D /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0635A6CC21832A3AA862CA5B /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		166B8D8786FD72C474962201 /* MainBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBrowserView.swift; sourceTree = "<group>"; };
+		1F644A4113B9C5C9EAFDB25E /* WallpaperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperService.swift; sourceTree = "<group>"; };
+		1FCB1B410CA3408AFA407D3A /* BrowserWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserWindowManager.swift; sourceTree = "<group>"; };
+		2AC606843E221639803A4FF9 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		3DAFF961C6110B2CB71F7909 /* BackgroundFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFeedService.swift; sourceTree = "<group>"; };
+		3E7AF56300E02822F197BA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40D5F3628EDEE553930002AC /* RedditPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPost.swift; sourceTree = "<group>"; };
+		4D92F6349A38BADE54772759 /* RedditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditService.swift; sourceTree = "<group>"; };
+		5088B575CF35323AB814A1D8 /* AutoRotateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotateService.swift; sourceTree = "<group>"; };
+		741C079E54DAE9F431CA0801 /* WallDriftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallDriftApp.swift; sourceTree = "<group>"; };
+		9C689BE7E7C0AF3DBCCBCAE9 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		9CE63D24560BC2F85E22F14A /* WallDrift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WallDrift.entitlements; sourceTree = "<group>"; };
+		ABC700ECFCCB0C9DA25DD837 /* WallDrift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WallDrift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE1643D9A37A3E9C07FCC73 /* MenuBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewModel.swift; sourceTree = "<group>"; };
+		AEE63CF410881D455379647C /* SubredditSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditSource.swift; sourceTree = "<group>"; };
+		B36A4F1E8A823C7F69F925C9 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+		B435A8274FA47F7EABEDA417 /* AddSubredditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubredditSheet.swift; sourceTree = "<group>"; };
+		B74DEF993BF096D8CCA5129D /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
+		BE275F208580C308CDD56883 /* WallpaperDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperDetailView.swift; sourceTree = "<group>"; };
+		D00F83CB6C2464615762262D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1036A2552E85F1FF7F8A652 /* WallpaperGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperGridView.swift; sourceTree = "<group>"; };
+		E76CB463EF21515D7D5A6764 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		E959960F16BF4115264AB236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F9C14ED26EB9BA4FCEA7E5D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		12DA478F7E2CA753A1E1F0D3 /* WallDrift */ = {
+			isa = PBXGroup;
+			children = (
+				D00F83CB6C2464615762262D /* AppDelegate.swift */,
+				3E7AF56300E02822F197BA51 /* Assets.xcassets */,
+				E959960F16BF4115264AB236 /* Info.plist */,
+				9CE63D24560BC2F85E22F14A /* WallDrift.entitlements */,
+				741C079E54DAE9F431CA0801 /* WallDriftApp.swift */,
+				93ABBA619164E573C1E34E19 /* Models */,
+				89DC831E4BFC72823F59E257 /* Services */,
+				7E5AAE51E04AA65DC29CC052 /* ViewModels */,
+				7E3A6E4C1DE80F0D6B478418 /* Views */,
+			);
+			path = WallDrift;
+			sourceTree = "<group>";
+		};
+		1C8E7EBEA168D1E0ADE4E564 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABC700ECFCCB0C9DA25DD837 /* WallDrift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3A6E4C1DE80F0D6B478418 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B435A8274FA47F7EABEDA417 /* AddSubredditSheet.swift */,
+				166B8D8786FD72C474962201 /* MainBrowserView.swift */,
+				2AC606843E221639803A4FF9 /* MenuBarView.swift */,
+				F9C14ED26EB9BA4FCEA7E5D6 /* SettingsView.swift */,
+				E76CB463EF21515D7D5A6764 /* SidebarView.swift */,
+				9C689BE7E7C0AF3DBCCBCAE9 /* TimelineView.swift */,
+				BE275F208580C308CDD56883 /* WallpaperDetailView.swift */,
+				E1036A2552E85F1FF7F8A652 /* WallpaperGridView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E5AAE51E04AA65DC29CC052 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B74DEF993BF096D8CCA5129D /* BrowserViewModel.swift */,
+				ACE1643D9A37A3E9C07FCC73 /* MenuBarViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		868CE8A7CF1AB407F75161B4 = {
+			isa = PBXGroup;
+			children = (
+				12DA478F7E2CA753A1E1F0D3 /* WallDrift */,
+				1C8E7EBEA168D1E0ADE4E564 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89DC831E4BFC72823F59E257 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5088B575CF35323AB814A1D8 /* AutoRotateService.swift */,
+				3DAFF961C6110B2CB71F7909 /* BackgroundFeedService.swift */,
+				1FCB1B410CA3408AFA407D3A /* BrowserWindowManager.swift */,
+				0635A6CC21832A3AA862CA5B /* ImageCacheService.swift */,
+				4D92F6349A38BADE54772759 /* RedditService.swift */,
+				1F644A4113B9C5C9EAFDB25E /* WallpaperService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		93ABBA619164E573C1E34E19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40D5F3628EDEE553930002AC /* RedditPost.swift */,
+				AEE63CF410881D455379647C /* SubredditSource.swift */,
+				B36A4F1E8A823C7F69F925C9 /* Wallpaper.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		318CBB1A02EE8FD229F602FD /* WallDrift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BDE8F50E21018C78BED4E74 /* Build configuration list for PBXNativeTarget "WallDrift" */;
+			buildPhases = (
+				3752D7B79807B362B2F4A923 /* Sources */,
+				640EA5A156B2AB992423874D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallDrift;
+			packageProductDependencies = (
+			);
+			productName = WallDrift;
+			productReference = ABC700ECFCCB0C9DA25DD837 /* WallDrift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AB00CB421FA84C045F6EFB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					318CBB1A02EE8FD229F602FD = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 24B3F3DC7B803FDC72B10A69 /* Build configuration list for PBXProject "WallDrift" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 868CE8A7CF1AB407F75161B4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1C8E7EBEA168D1E0ADE4E564 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				318CBB1A02EE8FD229F602FD /* WallDrift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		640EA5A156B2AB992423874D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F018487594A8A66C26B92D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3752D7B79807B362B2F4A923 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1254AE666AD0C55056926E /* AddSubredditSheet.swift in Sources */,
+				DF4633916E3549FBD6DF567B /* AppDelegate.swift in Sources */,
+				0ACF338819C6FB374DEE19BC /* AutoRotateService.swift in Sources */,
+				3634F723F7AA9E862971E15F /* BackgroundFeedService.swift in Sources */,
+				D3AE32FC9DE244497F9DBAB4 /* BrowserViewModel.swift in Sources */,
+				2676135FA037109A6C682668 /* BrowserWindowManager.swift in Sources */,
+				3155476F1498C77F813C2F79 /* ImageCacheService.swift in Sources */,
+				5E9D4040BD1691F54C6A8E84 /* MainBrowserView.swift in Sources */,
+				2DBEBCB330C94B0C28960F65 /* MenuBarView.swift in Sources */,
+				813CAF95FD480ED2B8C3CD4F /* MenuBarViewModel.swift in Sources */,
+				09C93C5AB9A1AFE8BD1F9E68 /* RedditPost.swift in Sources */,
+				518A0A61CAD87B43E1BADD41 /* RedditService.swift in Sources */,
+				D3FF3A8AE2C8BB744F960AE1 /* SettingsView.swift in Sources */,
+				4962D8EBA8F11654F1930AD2 /* SidebarView.swift in Sources */,
+				A6F4F47618F73F0945989472 /* SubredditSource.swift in Sources */,
+				5E0231AD55193059429EA76C /* TimelineView.swift in Sources */,
+				0EED15BCCA48BC40E3490ACE /* WallDriftApp.swift in Sources */,
+				A5641AD9BC6610F58A37FA13 /* Wallpaper.swift in Sources */,
+				54FAD7022E99DD5BDD5DF576 /* WallpaperDetailView.swift in Sources */,
+				D3EC37647C47A9AAB9AA8C4F /* WallpaperGridView.swift in Sources */,
+				92C2C46D6E239AB84B28D787 /* WallpaperService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		79A0B2FC6E54D208D3F8471D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WallDrift/Info.plist;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walldrift.WallDrift;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		8BBEE909098583D9525C1202 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A8F89FEA5B2F0A6E48A6A041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EA60DD2EBE0275A1F1632DA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WallDrift/Info.plist;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walldrift.WallDrift;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24B3F3DC7B803FDC72B10A69 /* Build configuration list for PBXProject "WallDrift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BBEE909098583D9525C1202 /* Debug */,
+				A8F89FEA5B2F0A6E48A6A041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6BDE8F50E21018C78BED4E74 /* Build configuration list for PBXNativeTarget "WallDrift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA60DD2EBE0275A1F1632DA6 /* Debug */,
+				79A0B2FC6E54D208D3F8471D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AB00CB421FA84C045F6EFB7 /* Project object */;
+}
